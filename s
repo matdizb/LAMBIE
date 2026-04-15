@@ -1,0 +1,1 @@
+https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent" \ -H 'Content-Type: application/json' \ -H 'X-goog-api-key: AIzaSyAR3wQ_NBuWdGViEwxiAoql2sX0_zUO7Os' \ -X POST \ -d '{ "contents": [ { "parts": [ { "text": "Explain how AI works in a few words" } ] } ] }'

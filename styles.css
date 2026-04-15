@@ -1,0 +1,171 @@
+/* =========================================
+   PALETA DE COLORES Y VARIABLES
+   ========================================= */
+:root {
+    --color-dark: #332E1D;
+    --color-green-main: #5AC7AA;
+    --color-green-light: #9ADCB9;
+    --color-yellow-light: #FAFCD3;
+    --color-yellow-main: #EFEBA9;
+    --color-teal: #3b8270;
+    --color-mint: #e0f8f1;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: var(--color-yellow-light); color: var(--color-dark); }
+html { scroll-behavior: smooth; }
+
+/* =========================================
+   BARRA DE NAVEGACIÓN PERSISTENTE
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-yellow-light);
+    padding: 10px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-bottom: 3px solid var(--color-dark);
+}
+
+.nav-logo-container { display: flex; align-items: center; }
+.nav-logo { height: 60px; width: auto; }
+
+.nav-links { list-style: none; display: flex; gap: 30px; }
+.nav-links li a {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+.nav-links li a:hover { color: var(--color-green-main); }
+
+/* =========================================
+   LANDING PAGE (PÁGINA DE INICIO)
+   ========================================= */
+.landing-section { padding: 80px 20px; text-align: center; }
+#sobre-lambie { background-color: var(--color-yellow-main); }
+.features-section { background-color: var(--color-yellow-light); }
+.comments-section { background-color: var(--color-green-light); }
+.login-box { margin-top: 30px; background: white; padding: 20px; border-radius: 10px; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.google-btn-simulado { background-color: #4285F4; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1rem; margin-top: 15px; display: flex; align-items: center; gap: 10px; }
+.features-container { display: flex; justify-content: center; gap: 60px; margin-top: 40px; }
+.feature-item i { font-size: 4rem; color: var(--color-green-main); margin-bottom: 15px; }
+
+/* =========================================
+   APP: SELECCIÓN DE MASCOTA
+   ========================================= */
+#pet-selection-screen { padding: 50px 20px; text-align: center; background-color: var(--color-yellow-light); min-height: 100vh; }
+.pet-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 40px; }
+.pet-card { background: white; border-radius: 15px; padding: 20px; width: 200px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease, border 0.3s ease; border: 3px solid transparent; }
+.pet-card:hover { transform: translateY(-10px); border-color: var(--color-green-main); }
+.pet-img-placeholder { width: 100px; height: 100px; background-color: var(--color-yellow-main); border-radius: 50%; margin: 0 auto 15px; display: block; object-fit: cover; }
+.pet-traits { font-size: 0.85rem; color: #666; margin-top: 10px; font-style: italic; }
+
+/* =========================================
+   APP: DASHBOARD & DISEÑO A 2 COLUMNAS
+   ========================================= */
+#dashboard-screen { padding: 40px; padding-bottom: 150px; background-color: var(--color-yellow-light); }
+.app-header { margin-bottom: 30px; }
+.app-header h2 { font-size: 2rem; color: var(--color-dark); margin-bottom: 5px; }
+.dashboard-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: start; }
+@media (max-width: 900px) { .dashboard-layout { grid-template-columns: 1fr; } } 
+
+/* Herramientas (Columna Izquierda) */
+.tools-column { display: flex; flex-direction: column; gap: 20px; }
+.tools-grid-mini { display: flex; flex-wrap: wrap; gap: 15px; justify-content: flex-start; }
+.tool-card { background: white; border-radius: 15px; padding: 20px; width: 200px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; border: 2px solid transparent; transition: 0.3s; flex-grow: 1; border: 3px solid var(--color-dark); box-shadow: 4px 4px 0px var(--color-dark); }
+.tool-card:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px var(--color-dark); border-color: var(--color-green-light); }
+.tool-card i { font-size: 2.5rem; color: var(--color-green-main); margin-bottom: 10px; text-shadow: 2px 2px 0px rgba(51, 46, 29, 0.1); }
+.recommended-card { border-color: var(--color-green-main); box-shadow: 4px 4px 0px var(--color-green-main); background-color: #f0fdf7; }
+.recommended-card:hover { box-shadow: 6px 6px 0px var(--color-green-main); }
+
+/* Súper Pomodoro */
+.pomodoro-card-pro { background-color: var(--color-green-main); color: white; width: 100%; padding: 30px; border-radius: 15px; text-align: center; border: 4px solid var(--color-dark); box-shadow: 6px 6px 0px var(--color-dark); cursor: default; }
+.pomodoro-card-pro:hover { transform: none; box-shadow: 6px 6px 0px var(--color-dark); border-color: var(--color-dark); }
+.pomo-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+.pomo-tab { background: rgba(255, 255, 255, 0.2); border: 2px solid white; color: white; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 1rem; transition: 0.3s; }
+.pomo-tab.active { background: rgba(0, 0, 0, 0.15); border-color: rgba(0, 0, 0, 0.15); }
+.timer-large { font-size: 6rem; font-weight: bold; margin: 20px 0; letter-spacing: 2px; text-shadow: 3px 3px 0px var(--color-dark); }
+.pomo-controls { display: flex; justify-content: center; align-items: center; gap: 15px; }
+.pomo-main-btn { background-color: white; color: var(--color-green-main); border: 2px solid var(--color-dark); padding: 15px 40px; font-size: 1.5rem; font-weight: bold; border-radius: 8px; cursor: pointer; box-shadow: 4px 4px 0px var(--color-dark); transition: transform 0.1s; }
+.pomo-main-btn:active { transform: translateY(4px); box-shadow: none; }
+.pomo-skip-btn { background: rgba(255, 255, 255, 0.3); border: 2px solid white; color: white; font-size: 1.5rem; padding: 15px; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+.pomo-skip-btn:hover { background: rgba(255, 255, 255, 0.5); }
+
+/* Tareas */
+.tasks-container { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); min-height: 300px; border: 3px solid var(--color-dark); box-shadow: 4px 4px 0px var(--color-dark); }
+.tasks-container h3 { color: var(--color-dark); margin-bottom: 20px; border-bottom: 2px solid var(--color-yellow-main); padding-bottom: 10px; font-weight: bold; }
+.task-input-area { display: flex; gap: 10px; margin-bottom: 20px; }
+.task-input-area input { flex: 1; padding: 12px; border: 2px solid var(--color-dark); border-radius: 5px; outline: none; }
+.task-input-area button { background: var(--color-green-main); color: white; border: 2px solid var(--color-dark); padding: 12px 18px; border-radius: 5px; cursor: pointer; box-shadow: 2px 2px 0px var(--color-dark); }
+.task-input-area button:active { transform: translateY(2px); box-shadow: none; }
+.task-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.task-item { display: flex; justify-content: space-between; align-items: center; background: #fafafa; padding: 12px 15px; border-radius: 8px; border: 2px solid var(--color-dark); box-shadow: 2px 2px 0px var(--color-dark); border-left: 6px solid var(--color-green-main); }
+.task-item.completed { opacity: 0.6; text-decoration: line-through; border-left-color: #ccc; box-shadow: none; }
+.task-item-content { display: flex; align-items: center; gap: 10px; cursor: pointer; flex: 1; }
+.task-delete-btn { background: none; border: none; color: #ff6b6b; cursor: pointer; font-size: 1.1rem; transition: color 0.3s; }
+.task-delete-btn:hover { color: var(--color-dark); }
+
+/* =========================================
+   PÁGINA: SOBRE NOSOTROS (Estilos específicos)
+   ========================================= */
+.sobre-nosotros-body { background-color: var(--color-yellow-light); }
+.about-section { padding: 60px 20px; max-width: 900px; margin: 0 auto; text-align: left; color: var(--color-dark); }
+.about-header { text-align: center; margin-bottom: 50px; }
+.about-header h1 { font-size: 2.8rem; font-weight: bold; color: var(--color-dark); margin-bottom: 15px; }
+.about-header p { font-size: 1.3rem; color: var(--color-teal); font-weight: 500; }
+.about-content h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--color-dark); border-bottom: 4px solid var(--color-dark); padding-bottom: 10px; display: inline-block; }
+.about-content p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px; }
+
+.about-logo-original-container { text-align: center; margin-top: 80px; padding: 40px; background-color: white; border-radius: 20px; border: 6px solid var(--color-dark); box-shadow: 10px 10px 0px var(--color-dark); }
+.about-logo-original { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+
+/* =========================================
+   MODALES, CHAT Y MASCOTA
+   ========================================= */
+.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
+.modal-content { background-color: white; margin: 15% auto; padding: 30px; border-radius: 15px; width: 80%; max-width: 500px; text-align: center; border: 4px solid var(--color-dark); box-shadow: 6px 6px 0px var(--color-dark); }
+.modal-content select { width: 100%; padding: 12px; margin-top: 15px; font-size: 1rem; border: 2px solid var(--color-dark); border-radius: 5px; }
+
+#floating-pet-container { position: fixed; bottom: 20px; right: 30px; z-index: 999; display: flex; flex-direction: column; align-items: center; }
+#floating-pet-img { width: 120px; height: 120px; cursor: pointer; transition: transform 0.2s; background-color: var(--color-yellow-main); border-radius: 50%; border: 3px solid var(--color-dark); box-shadow: 4px 4px 0px var(--color-dark); }
+#floating-pet-img:hover { transform: translate(-2px, -2px) scale(1.05); box-shadow: 6px 6px 0px var(--color-dark); }
+.speech-bubble { background: white; border: 2px solid var(--color-dark); border-radius: 15px; padding: 10px 15px; font-size: 0.9rem; color: var(--color-dark); margin-bottom: 15px; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.1); max-width: 150px; text-align: center; animation: float 3s ease-in-out infinite; }
+.speech-bubble::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); border-width: 10px 10px 0; border-style: solid; border-color: var(--color-dark) transparent transparent transparent; }
+@keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+
+#chat-container { position: fixed; bottom: 20px; right: 160px; width: 350px; height: 500px; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); display: flex; flex-direction: column; z-index: 1000; border: 4px solid var(--color-dark); box-shadow: 6px 6px 0px var(--color-dark); }
+.chat-header { background-color: var(--color-teal); color: white; padding: 15px; border-radius: 11px 11px 0 0; display: flex; justify-content: space-between; font-weight: bold; border-bottom: 2px solid var(--color-dark); }
+.chat-header button { background: none; border: none; color: white; cursor: pointer; font-size: 1.2rem; }
+.chat-messages { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background-color: #fafafa; }
+.message { padding: 12px 15px; border-radius: 12px; max-width: 85%; font-size: 0.95rem; border: 2px solid var(--color-dark); line-height: 1.5; }
+.bot-message { background-color: var(--color-yellow-light); align-self: flex-start; border-bottom-left-radius: 0; box-shadow: 2px 2px 0px var(--color-dark); }
+.user-message { background-color: var(--color-mint); color: var(--color-dark); align-self: flex-end; margin-left: auto; border-bottom-right-radius: 0; box-shadow: 2px 2px 0px var(--color-dark); }
+.chat-input-area { display: flex; padding: 10px; border-top: 3px solid var(--color-dark); background: white; border-radius: 0 0 11px 11px; align-items: center;}
+.chat-input-area input[type="text"] { flex: 1; padding: 10px; border: 2px solid var(--color-dark); border-radius: 5px; outline: none; margin: 0 10px;}
+.file-btn { color: var(--color-dark); cursor: pointer; font-size: 1.2rem;}
+#send-btn { background: none; border: none; color: var(--color-teal); font-size: 1.5rem; cursor: pointer; }
+
+/* =========================================
+   ESTILOS PARA EL MARKDOWN DE LA IA
+   ========================================= */
+.bot-message p { margin-bottom: 8px; }
+.bot-message p:last-child { margin-bottom: 0; }
+.bot-message ul, .bot-message ol {
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.bot-message strong { color: var(--color-dark); font-weight: 800; }
+.bot-message code {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9rem;
+}

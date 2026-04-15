@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lambie - Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo-container">
+            <img src="./assets/lambielogo_completo.png" alt="Lambie Logo" class="nav-logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" style="color: #5AC7AA;">Inicio</a></li>
+            <li><a href="caracteristicas.html">Características</a></li>
+            <li><a href="comentarios.html">Comentarios</a></li>
+            <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+        </ul>
+    </nav>
+
+    <div id="landing-view">
+        <section id="sobre-lambie" class="landing-section" style="min-height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <h1>¡Bienvenido a Lambie!</h1>
+            <p>Tu compañero de estudio ideal impulsado por Inteligencia Artificial.</p>
+            <div class="login-box">
+                <p>Inicia sesión para comenzar:</p>
+                <button class="google-btn-simulado" onclick="simularLogin()">
+                    <i class="fab fa-google"></i> Entrar (Modo Prueba)
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <div id="app-view" style="display: none;">
+        
+        <div id="pet-selection-screen">
+            <h2>¡Elige a tu compañero de estudio!</h2>
+            <div class="pet-grid">
+                <div class="pet-card" onclick="selectPet('lambie', 'Lambie', 'Oveja', '../assets/Mascotas/lambiemas.png')">
+                    <img src="./assets/Mascotas/lambiemas.png" alt="Lambie" class="pet-img-placeholder">
+                    <h3>Lambie (Oveja)</h3>
+                    <p class="pet-traits">Calma · Apoyo · Sabiduría</p>
+                </div>
+                <div class="pet-card" onclick="selectPet('otkis', 'Otkis', 'Pulpo', '../assets/Mascotas/otkismas.png')">
+                    <img src="./assets/Mascotas/otkismas.png" alt="Otkis" class="pet-img-placeholder">
+                    <h3>Otkis (Pulpo)</h3>
+                    <p class="pet-traits">Memoria · Multitarea · Creatividad</p>
+                </div>
+                <div class="pet-card" onclick="selectPet('pingu', 'Pingu', 'Pingüino', '../assets/Mascotas/pingumas.png')">
+                    <img src="./assets/Mascotas/pingumas.png" alt="Pingu" class="pet-img-placeholder">
+                    <h3>Pingu (Pingüino)</h3>
+                    <p class="pet-traits">Enfoque · Organización · Disciplina</p>
+                </div>
+                <div class="pet-card" onclick="selectPet('nusty', 'Nusty', 'Ardilla', '../assets/Mascotas/nustymas.png')">
+                    <img src="./assets/Mascotas/nustymas.png" alt="Nusty" class="pet-img-placeholder">
+                    <h3>Nusty (Ardilla)</h3>
+                    <p class="pet-traits">Energia · Rapidez · Curiosidad</p>
+                </div>
+                <div class="pet-card" onclick="selectPet('hootie', 'Hootie', 'Búho', '../assets/Mascotas/hootiemas.png')">
+                    <img src="./assets/Mascotas/hootiemas.png" alt="Hootie" class="pet-img-placeholder">
+                    <h3>Hootie (Búho)</h3>
+                    <p class="pet-traits">Logica · Analisis · Profundidad</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-questionnaire" class="modal">
+            <div class="modal-content">
+                <h2 id="pet-greeting-modal">¡Hola!</h2>
+                <p>Para ayudarte mejor, dime: ¿Cuál es tu mayor desafío al estudiar?</p>
+                <select id="q-challenge">
+                    <option value="concentracion">Me cuesta concentrarme (Me distraigo fácil)</option>
+                    <option value="memorizacion">Olvido lo que leo (Necesito memorizar mejor)</option>
+                    <option value="comprension">Me cuesta entender temas complejos</option>
+                </select>
+                <br><br>
+                <a href="Espacio de estudio/index.html">
+                    <button onclick="submitQuestionnaire()" style="background-color: #5AC7AA; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Descubrir mi método</button>
+                </a>
+            </div>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

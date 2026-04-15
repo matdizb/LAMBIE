@@ -1,6 +1,6 @@
 
 // --- CONFIGURACIÓN DE GROQ API ---
-const GROQ_API_KEY = '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'; 
+const GROQ_API_KEY = ''; 
 // ... (el resto de tu código normal)// --- CONFIGURACIÓN DE GROQ API --- 
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 const GROQ_MODEL = 'openai/gpt-oss-120b'; 
